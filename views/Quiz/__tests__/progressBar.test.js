@@ -7,5 +7,6 @@ import ProgressBar from '../components/ProgressBar';
 
 
 it('renders correctly', () => {
-  renderer.create(<ProgressBar progress={"15%"}/>);
+  renderer.create(<ProgressBar progress={"35%"}/>);
 });
+

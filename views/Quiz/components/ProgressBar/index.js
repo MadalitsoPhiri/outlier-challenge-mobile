@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import styled from 'styled-components/native';
 
 
@@ -21,7 +20,7 @@ background-color: white;
 export default ({progress})=>{
     return(
       <ProgressContainer>
-      <Progress progress={progress}/>
+        <Progress progress={progress} testID='progress'/>
       </ProgressContainer>
     )
 }
