@@ -6,20 +6,24 @@ export const Constants = {
 export const getRandomInt = (min, max)=>{
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (max - min) + min); 
   }
 export const getQuestionNumber = (questions)=>{
     for(let i = 0; i < questions.length; i++){
          if(!questions[i].status.answered){
             return {
-                current:i+1,
-                total:questions.length
+                currentQuestion:i+1,
+                numberOfQuestionsAnswered:(i+1) - 1,
+                progress:Math.floor((i+1)/questions.length * 100),
+                totalQuestions:questions.length
             }
          }
     }
     return {
-        current:0+1,
-        total:questions.length
+        currentQuestion:null,
+        numberOfQuestionsAnswered:questions.length,
+        progress:100,
+        totalQuestions:questions.length
     }
  }
 export const generateData = ()=>{return{
