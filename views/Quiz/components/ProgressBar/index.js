@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 
 
@@ -11,7 +11,7 @@ background-color: gray;
 
 `
 
-const ProgressConatiner = styled.View`
+const ProgressContainer = styled.View`
 width: 100%;
 height: 12px;
 background-color: white;
@@ -20,8 +20,8 @@ background-color: white;
 
 export default ({progress})=>{
     return(
-      <ProgressConatiner>
+      <ProgressContainer>
       <Progress progress={progress}/>
-      </ProgressConatiner>
+      </ProgressContainer>
     )
 }

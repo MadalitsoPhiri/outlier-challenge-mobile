@@ -13,9 +13,9 @@ flex-direction:column;
 `;
 
 export default ()=>{
-    return(
+  return(
      <Container>
-      <ProgressBar progress={"15%"}/>
+        <ProgressBar progress={"15%"}/>
      </Container>
     )
 }
