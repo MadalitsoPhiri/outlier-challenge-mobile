@@ -1,18 +1,20 @@
 import React from "react";
-import { FlatList, View } from "react-native";
+import {  View } from "react-native";
 import styled,{css} from "styled-components";
 import QuizChoiceButton from "../QuizChoiceButton";
 
-const Grid = styled.FlatList`
-width: 100%;
-`
+
 const ButtonRow = styled.View`
 flex-direction: row;
 display: flex;
-justify-content: space-between;
+justify-content:space-between;
+width: 100%;
+
 
 `
+
 export default ButtonGrid = ({data})=>{
+ 
     return (
         // <Grid
         // data={data}
@@ -22,14 +24,14 @@ export default ButtonGrid = ({data})=>{
         // />
         <View>
              <ButtonRow>
-            <QuizChoiceButton/>
-            <QuizChoiceButton/>
+            <QuizChoiceButton text={data[0].text} right={false}/>
+            <QuizChoiceButton text={data[1].text} right={true}/>
 
         </ButtonRow>
 
         <ButtonRow>
-            <QuizChoiceButton/>
-            <QuizChoiceButton/>
+            <QuizChoiceButton text={data[2].text} right={false}/>
+            <QuizChoiceButton text={data[3].text} right={true}/>
 
         </ButtonRow>
         </View>
