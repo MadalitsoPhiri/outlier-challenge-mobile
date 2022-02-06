@@ -15,7 +15,7 @@ describe('test getQuizProgress function',()=>{
        
         //set question progress dummy example 
         data = data.map((item,index)=>{
-            // set answered questions up to 10
+            // set correct answered questions up to 10
             if(index < 10){
                 //set each 
                 item.status.answered = true,
@@ -31,6 +31,7 @@ describe('test getQuizProgress function',()=>{
             numberOfQuestionsAnswered:10,
             progress:55,
             currentScore:100,
+            currentMinimumScore:50,
             currentMaximumScore:100,
             totalQuestions:20})
          //   
@@ -61,6 +62,7 @@ describe('test getQuizProgress function',()=>{
             numberOfQuestionsAnswered:19,
             progress:100,
             currentScore:53,
+            currentMinimumScore:50,
             currentMaximumScore:55,
             totalQuestions:20})
           
@@ -95,6 +97,7 @@ describe('test getQuizProgress function',()=>{
             numberOfQuestionsAnswered:20,
             progress:100,
             currentScore:50,
+            currentMinimumScore:50,
             currentMaximumScore:50,
             totalQuestions:20})
            
@@ -109,6 +112,7 @@ describe('test getQuizProgress function',()=>{
             numberOfQuestionsAnswered:0,
             progress:5,
             currentScore:0,
+            currentMinimumScore:0,
             currentMaximumScore:100,
             totalQuestions:20})
     })
