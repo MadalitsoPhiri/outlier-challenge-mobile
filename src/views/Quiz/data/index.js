@@ -8,21 +8,44 @@ export const getRandomInt = (min, max)=>{
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); 
   }
-export const getQuestionNumber = (questions)=>{
+const getMinimumScore = ()=>{
+    return 
+}
+const getMaximumScore = (numberOfQuestionsAvailable, totalNumberOfQuestions)=>{
+    
+    return Math.round(numberOfQuestionsAvailable / totalNumberOfQuestions * 100)
+}  
+const getCurrentScore = (numberOfQuestionsAnswered,numberOfQuestionsAnsweredCorrectly)=>{
+    if(numberOfQuestionsAnswered === 0) return 0;
+     return Math.round(numberOfQuestionsAnsweredCorrectly / numberOfQuestionsAnswered * 100)
+}
+export const getQuizProgress = (questions)=>{
+    const answeredCorrectly = []
     for(let i = 0; i < questions.length; i++){
+      
+
          if(!questions[i].status.answered){
             return {
                 currentQuestion:i+1,
                 numberOfQuestionsAnswered:(i+1) - 1,
                 progress:Math.floor((i+1)/questions.length * 100),
+                currentScore:getCurrentScore((i+1) - 1,answeredCorrectly.length),
+                currentMaximumScore:getMaximumScore(answeredCorrectly.length + (questions.length - ((i+1) - 1)),questions.length),
                 totalQuestions:questions.length
             }
+         }else{
+           if(questions[i].choices[questions[i].status.answerIndex]?.isCorrect){
+            answeredCorrectly.push(questions[i].choices[questions[i].status.answerIndex])
+           }
+    
          }
     }
     return {
         currentQuestion:null,
         numberOfQuestionsAnswered:questions.length,
         progress:100,
+        currentScore:getCurrentScore(questions.length,answeredCorrectly.length),
+        currentMaximumScore:getMaximumScore(answeredCorrectly.length + (questions.length - questions.length),questions.length),
         totalQuestions:questions.length
     }
  }
