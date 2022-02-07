@@ -1,4 +1,5 @@
 import {HARD} from "../../../helpers/constants"
+import Questions from "./questions.json";
 import {getCurrentScore, getMaximumScore, getMinimumScore, isCorrect} from "../../../helpers/utility"
 
 export const getQuizProgress = (questions)=>{
@@ -33,22 +34,22 @@ export const getQuizProgress = (questions)=>{
         totalQuestions:questions.length
     }
  }
-export const generateData = ()=>{return{
-    questions:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((item,index)=>{return {
-        text:"At the start of a standard game of Monopoly, if you throw a double six, which square would you land on?",
-        category:"Entertaiment: Board Games",
-        difficulty:HARD,
-        status:{
-            answered:false,
-            answerIndex:null
-        },
-        choices: [
-            {isCorrect:false,text:"Chance"},
-            {isCorrect:false,text:"Water Works"},
-            {isCorrect:true,text:"Electric Company"},
-            {isCorrect:false,text:"Community Chest"}
-        ]
-     }}),
+export const getQuestions = ()=>Questions.map((item,index)=>{
+    return {
+        ...item,
+        answered:false,
+        answer:null
+    }
+})
+export const setQuizState = ()=>{
+    return {
+       questions:[],
+       currentQuestionIndex:0,
+       numCorrectAnswers:0,
+       numWrongAnswers:0,
+       loading:true,
+    }
+}
+
      
     
-}} 
