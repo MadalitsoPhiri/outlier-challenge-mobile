@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {  Text } from 'react-native';
+import {getMaximumScore, getMinimumScore, getCurrentScore} from "../../../../helpers/utility"
 
 const StatsContainer = styled.View`
 border:black 1px solid;
@@ -27,7 +28,7 @@ font-weight: 500;
 `
 const CurrentScoreView = styled.View`
 background-color: gray;
-width: ${props=>props.data.currentScore}%;
+width: ${props=>props.data}%;
 height: 100%;
 opacity:1;
 
@@ -35,7 +36,7 @@ opacity:1;
 
 const MaximumScoreView = styled.View`
 background-color: gray;
-width: ${props=>props.data.currentMaximumScore}%;
+width: ${props=>props.data}%;
 height: 100%;
 opacity:0.5;
 position: absolute;
@@ -43,7 +44,7 @@ position: absolute;
 
 const MinimumScoreView = styled.View`
 background-color: black;
-width: ${props=>props.data.currentMinimumScore}%;
+width: ${props=>props.data}%;
 height: 100%;
 opacity:1;
 position: absolute;
@@ -52,13 +53,13 @@ export default ({data})=>{
     return(
         <Container>
             <StatsLabelContainer>
-                <StatsLabelText>{`Score: ${data.currentScore}%`}</StatsLabelText>
-                <StatsLabelText>{`Max Score: ${data.currentMaximumScore}%`}</StatsLabelText>
+                <StatsLabelText>{`Score: ${getCurrentScore(data)}%`}</StatsLabelText>
+                <StatsLabelText>{`Max Score: ${getMaximumScore(data)}%`}</StatsLabelText>
             </StatsLabelContainer>
             <StatsContainer>
-                <CurrentScoreView data={data}/>
-                <MaximumScoreView data={data}/>
-                <MinimumScoreView data={data}/>
+                <CurrentScoreView data={getCurrentScore(data)}/>
+                <MaximumScoreView data={getMaximumScore(data)}/>
+                <MinimumScoreView data={getMinimumScore(data)}/>
             </StatsContainer>
         </Container>
      

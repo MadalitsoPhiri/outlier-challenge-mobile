@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import styled from 'styled-components';
-import { generateData, getQuestions, getQuizProgress, setQuizState } from '../Quiz/data/index';
+import { generateData, getQuestions, setQuizState } from '../Quiz/data/index';
 import ButtonGrid from './components/ButtonGrid';
 import ProgressBar from './components/ProgressBar';
 import Difficulty from './components/Difficulty';
 import StatsBar from './components/StatsBar';
 import { HARD } from '../../helpers/constants';
+import { getQuizProgress } from '../../helpers/utility';
 
 
 
 const Container = styled.SafeAreaView`
 flex:1;
+height:100%;
 display:flex;
 background-color:white;
 flex-direction:column;
@@ -48,6 +50,7 @@ margin-bottom: 12%;
 `
 const ContentContainer = styled.View`
 flex:1;
+height:100%;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -62,14 +65,9 @@ export default ()=>{
    useEffect(()=>{
       // get Questions
       const result = getQuestions()
-      // console.log(data)
+ 
       setData({...data,questions:result,loading:false})
-      // const Progress = getQuizProgress(data.questions)
-   //   setCurrentQuestionIndex(Progress.currentQuestion - 1)
-   //   setProgress(Progress)
-   
-   //   console.log("current q index",JSON.stringify(progress))
-   //   console.log("current data",JSON.stringify(Progress))
+      
 
    },[])
    console.log(data)
@@ -77,17 +75,19 @@ export default ()=>{
    if(data.loading) return null
   return(
      <Container>
-        <ProgressBar progress={`${5}%`}/>
+        <ProgressBar progress={`${getQuizProgress(data)}%`}/>
         <ContentContainer>
         <InnerContainer>
-           <QuestionTitle>{`Questions ${1} of ${20}`}</QuestionTitle>
-           <CategoryText>{"Games"}</CategoryText>
-           <Difficulty value={HARD}/>
-<QuestionText>{"what are you working on?"}</QuestionText>
+           <QuestionTitle>{`Questions ${data.currentQuestionIndex + 1 } of ${data.questions.length}`}</QuestionTitle>
+           <CategoryText>{data.questions[data.currentQuestionIndex].category}</CategoryText>
+           <Difficulty value={data.questions[data.currentQuestionIndex].difficulty}/>
+            <QuestionText>{data.questions[data.currentQuestionIndex].question}</QuestionText>
 
-           {/* <ButtonGrid data={data.questions[currentQuestionIndex].choices}/> */}
+            <ButtonGrid data={data} onSelect={(index)=>{
+               console.log("onselect", index)
+           }} setter={setData}/> 
         </InnerContainer>
-        {/* <StatsBar data={Progress}/> */}
+        <StatsBar data={data}/>
         </ContentContainer>
       
      </Container>

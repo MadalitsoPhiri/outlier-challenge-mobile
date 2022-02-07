@@ -3,6 +3,19 @@ export const getRandomInt = (min, max)=>{
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); 
   }
+  export const randomizeChoices = (choicesArray,correctAnswer)=>{
+      if(choicesArray.length == 0) return choicesArray
+   const choicesLength = choicesArray.length + 1
+   const randomSelectedIndex = getRandomInt(0,choicesLength - 1)
+   if(randomSelectedIndex === choicesLength - 1) return [...choicesArray,correctAnswer]
+   // swap out value with correct answer
+   const previousValue = choicesArray[randomSelectedIndex] 
+    const choicesArrayCopy = [...choicesArray]
+    choicesArrayCopy[randomSelectedIndex] = correctAnswer
+    choicesArrayCopy[choicesLength - 1] = previousValue
+    return choicesArrayCopy
+
+  }
 export const getMinimumScore = (data)=>{
     const totalNumberOfQuestions = data.questions.length
    if(data.numCorrectAnswers == 0) return 0;

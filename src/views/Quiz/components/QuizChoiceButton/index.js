@@ -14,7 +14,7 @@ const ButtonContainer = styled.Pressable`
   padding: 5px 13px;
   border:black 1px solid ;
   border-radius: 5px;
-  background-color:#ccc ;
+  background-color:#ddd ;
   display: flex;
   flex:1;
   justify-content: center;
@@ -26,9 +26,9 @@ font-size: 14px;
 color: black;
 `
 
-export default ({text,right})=>{
+export default ({text,right, onPress})=>{
     return(
-      <ButtonContainer right={right}>
+      <ButtonContainer onPress={onPress} right={right}>
         <ButtonText>{text}</ButtonText>
       </ButtonContainer>
     )

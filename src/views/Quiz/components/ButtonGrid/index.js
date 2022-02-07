@@ -1,8 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import {  View } from "react-native";
 import styled,{css} from "styled-components";
 import QuizChoiceButton from "../QuizChoiceButton";
-
+import {randomizeChoices} from "../../../../helpers/utility"
 
 const ButtonRow = styled.View`
 flex-direction: row;
@@ -13,27 +13,23 @@ width: 100%;
 
 `
 
-export default ButtonGrid = ({data})=>{
- 
+export default ButtonGrid = ({data, onSelect})=>{
+  let options = data.questions[data.currentQuestionIndex].incorrect_answers;
+  const correctAnswer = data.questions[data.currentQuestionIndex].correct_answer;
+  const [choices] = useState(randomizeChoices(options,correctAnswer));
     return (
-        // <Grid
-        // data={data}
-        // contentContainerStyle={{flex:1,alignItems:"center"}}
-        // numColumns={2}
-        // renderItem={({ item }) => <QuizChoiceButton />}
-        // />
         <View>
              <ButtonRow>
-            <QuizChoiceButton text={data[0].text} right={false}/>
-            <QuizChoiceButton text={data[1].text} right={true}/>
+            <QuizChoiceButton onPress={()=>onSelect(choices[0])} text={choices[0]} right={false}/>
+            <QuizChoiceButton onPress={()=>onSelect(choices[1])} text={choices[1]} right={true}/>
 
         </ButtonRow>
 
-        <ButtonRow>
-            <QuizChoiceButton text={data[2].text} right={false}/>
-            <QuizChoiceButton text={data[3].text} right={true}/>
+        {data.questions[data.currentQuestionIndex].type === "multiple" && <ButtonRow>
+            <QuizChoiceButton onPress={()=>onSelect(choices[2])}text={choices[2]} right={false}/>
+            <QuizChoiceButton onPress={()=>onSelect(choices[3])} text={choices[3]} right={true}/>
 
-        </ButtonRow>
+        </ButtonRow>}
         </View>
        
     )
