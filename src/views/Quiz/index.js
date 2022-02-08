@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
 import styled from 'styled-components';
-import { generateData, getQuestions, setQuizState } from '../Quiz/data/index';
+import { getQuestions, setQuizState } from '../Quiz/data/index';
 import ButtonGrid from './components/ButtonGrid';
 import ProgressBar from './components/ProgressBar';
 import Difficulty from './components/Difficulty';
 import StatsBar from './components/StatsBar';
-import { HARD } from '../../helpers/constants';
 import { getQuizProgress } from '../../helpers/utility';
+import AnswerResultArea from './components/AnswerResultArea';
 
 
 
@@ -58,9 +57,23 @@ padding: 10% 8%;
 `
 
 export default ()=>{
+   //TODO:Convert local state into global state with redux or context
    const [data, setData] = useState(setQuizState());
 
+   const handleOnSelected = (answer)=>{
+      const currentQuestions = data.questions
+      const isCorrect = currentQuestions[data.currentQuestionIndex].correct_answer === answer
+      currentQuestions[data.currentQuestionIndex] = {...currentQuestions[data.currentQuestionIndex],answered:true,answer}
+      const correctCount = isCorrect?{numCorrectAnswers:data.numCorrectAnswers + 1}:{numWrongAnswers:data.numWrongAnswers + 1}
 
+      setData({...data,questions:currentQuestions,...correctCount})
+     
+   }
+
+   const handleOnNextQuestion = ()=>{
+      
+      setData({...data,currentQuestionIndex:data.currentQuestionIndex + 1})
+   }
    
    useEffect(()=>{
       // get Questions
@@ -70,7 +83,11 @@ export default ()=>{
       
 
    },[])
-   console.log(data)
+
+   useEffect(()=>{
+// console.log("state changed:",data)
+   },[data])
+   
    //check if loading 
    if(data.loading) return null
   return(
@@ -83,10 +100,11 @@ export default ()=>{
            <Difficulty value={data.questions[data.currentQuestionIndex].difficulty}/>
             <QuestionText>{data.questions[data.currentQuestionIndex].question}</QuestionText>
 
-            <ButtonGrid data={data} onSelect={(index)=>{
-               console.log("onselect", index)
-           }} setter={setData}/> 
+            <ButtonGrid data={data} onSelect={handleOnSelected} setter={setData}/> 
+
+            <AnswerResultArea data={data} onPress={handleOnNextQuestion}/>
         </InnerContainer>
+       
         <StatsBar data={data}/>
         </ContentContainer>
       

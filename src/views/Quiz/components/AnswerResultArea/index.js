@@ -1,37 +1,54 @@
 import React from "react";
-import {  View } from "react-native";
+import {  View, Text } from "react-native";
 import styled,{css} from "styled-components";
 
 
-const ButtonRow = styled.View`
-flex-direction: row;
-display: flex;
-justify-content:space-between;
-width: 100%;
+const Result = styled.Text`
+font-size: 25px;
+font-weight: 500;
+color:black;
+margin-bottom: 5%;
 
 
 `
 const Button = styled.Pressable`
-  margin-bottom:8% ;
-  padding: 5px 13px;
+  padding: 8px 20px;
   border:black 1px solid ;
   border-radius: 5px;
-  background-color:#ccc ;
+  background-color:#ddd ;
   display: flex;
-  flex:1;
   justify-content: center;
   align-items: center;
 `;
 
-export default ButtonGrid = ({data})=>{
- 
-    return (
-    
-        // />
-        <View>
-            <Button><Text></Text></Button>
+const Container = styled.View`
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 8%;
+`
+const ButtonText = styled.Text`
+font-size: 15px;
+color: black;
+font-weight: 500;
+
+`
+
+export default ResultContainer = (props)=>{
+    const answer = props.data.questions[props.data.currentQuestionIndex].answer;
+    const answered = props.data.questions[props.data.currentQuestionIndex].answered;
+    const isCorrect = props.data.questions[props.data.currentQuestionIndex].correct_answer === answer;
+    const isLastQuestion = props.data.questions.length - 1 === props.data.currentQuestionIndex
+
+
+    return (answered &&
+        <Container>
+           <Result>{isCorrect?"Correct!":"Sorry!"}</Result>
+            <Button {...props} disabled={isLastQuestion}>
+                <ButtonText>{isLastQuestion?"Finish":"Next Question"}</ButtonText>
+            </Button>
             
-        </View>
+        </Container>
        
     )
 }

@@ -14,12 +14,8 @@ import Quiz from './views/Quiz';
 
 
 
-const App =  () =>  {
-
-
- 
-
-  return (
+const App = () =>  {
+ return (
   <Quiz/>
   );
 };
