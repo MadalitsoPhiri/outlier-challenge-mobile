@@ -1,50 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1644224697340" clover="3.2.0">
-  <project timestamp="1644224697340" name="All files">
-    <metrics statements="33" coveredstatements="21" conditionals="12" coveredconditionals="4" methods="8" coveredmethods="6" elements="53" coveredelements="31" complexity="0" loc="33" ncloc="33" packages="2" files="2" classes="2"/>
-    <package name="helpers.utility">
-      <metrics statements="29" coveredstatements="17" conditionals="12" coveredconditionals="4" methods="6" coveredmethods="4"/>
-      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/helpers/utility/index.js">
-        <metrics statements="29" coveredstatements="17" conditionals="12" coveredconditionals="4" methods="6" coveredmethods="4"/>
+<coverage generated="1644383644511" clover="3.2.0">
+  <project timestamp="1644383644511" name="All files">
+    <metrics statements="106" coveredstatements="104" conditionals="40" coveredconditionals="35" methods="34" coveredmethods="32" elements="180" coveredelements="171" complexity="0" loc="106" ncloc="106" packages="10" files="10" classes="10"/>
+    <package name="helpers.constants">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/helpers/constants/index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="helpers.utility">
+      <metrics statements="29" coveredstatements="29" conditionals="12" coveredconditionals="8" methods="6" coveredmethods="6"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/helpers/utility/index.js">
+        <metrics statements="29" coveredstatements="29" conditionals="12" coveredconditionals="8" methods="6" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="49" type="stmt"/>
+        <line num="3" count="49" type="stmt"/>
+        <line num="4" count="49" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="49" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="49" type="stmt"/>
+        <line num="9" count="49" type="stmt"/>
+        <line num="10" count="49" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="49" type="stmt"/>
+        <line num="13" count="49" type="stmt"/>
+        <line num="14" count="49" type="stmt"/>
+        <line num="15" count="49" type="stmt"/>
+        <line num="16" count="49" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="24" type="stmt"/>
+        <line num="21" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="47" type="stmt"/>
+        <line num="27" count="47" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="47" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="47" type="stmt"/>
+        <line num="33" count="47" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="37" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="26" type="cond" truecount="1" falsecount="1"/>
+        <line num="38" count="26" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz">
+      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/index.js">
+        <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="61" count="28" type="stmt"/>
+        <line num="63" count="28" type="stmt"/>
+        <line num="64" count="10" type="stmt"/>
+        <line num="65" count="10" type="stmt"/>
+        <line num="66" count="10" type="stmt"/>
+        <line num="67" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="10" type="stmt"/>
+        <line num="73" count="28" type="stmt"/>
+        <line num="75" count="8" type="stmt"/>
+        <line num="78" count="28" type="stmt"/>
+        <line num="80" count="5" type="stmt"/>
+        <line num="82" count="5" type="stmt"/>
+        <line num="87" count="28" type="stmt"/>
+        <line num="92" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="93" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz.components.AnswerResultArea">
+      <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/AnswerResultArea/index.js">
+        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="38" count="3" type="stmt"/>
+        <line num="37" count="23" type="stmt"/>
+        <line num="38" count="23" type="stmt"/>
+        <line num="39" count="23" type="stmt"/>
+        <line num="40" count="23" type="stmt"/>
+        <line num="43" count="23" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="views.Quiz.components.ButtonGrid">
+      <metrics statements="13" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/ButtonGrid/index.js">
+        <metrics statements="13" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="19" count="36" type="stmt"/>
+        <line num="20" count="36" type="stmt"/>
+        <line num="22" count="36" type="stmt"/>
+        <line num="23" count="36" type="stmt"/>
+        <line num="25" count="36" type="stmt"/>
+        <line num="27" count="13" type="stmt"/>
+        <line num="29" count="36" type="stmt"/>
+        <line num="32" count="9" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz.components.Difficulty">
+      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/Difficulty/index.js">
+        <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="14" count="23" type="stmt"/>
+        <line num="15" count="23" type="cond" truecount="4" falsecount="0"/>
+        <line num="16" count="23" type="stmt"/>
+        <line num="18" count="69" type="cond" truecount="2" falsecount="0"/>
       </file>
     </package>
     <package name="views.Quiz.components.ProgressBar">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/ProgressBar/index.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="24" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="21" count="24" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz.components.QuizChoiceButton">
+      <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/QuizChoiceButton/index.js">
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="140" type="cond" truecount="4" falsecount="0"/>
+        <line num="32" count="140" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz.components.StatsBar">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/components/StatsBar/index.js">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="23" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="23" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="23" type="stmt"/>
+        <line num="53" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Quiz.data">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.js" path="/Users/mad150/Desktop/challenge-mobile-quiz/src/views/Quiz/data/index.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="100" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="28" type="stmt"/>
       </file>
     </package>
   </project>

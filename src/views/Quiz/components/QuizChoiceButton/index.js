@@ -30,8 +30,8 @@ font-weight: 400;
 
 export default (props)=>{
     return(
-      <ButtonContainer {...props}>
-        <ButtonText {...props}>{props.text}</ButtonText>
+      <ButtonContainer testAnswer={props.text} testID="Choice.Button" {...props}>
+        <ButtonText choice {...props}>{props.text}</ButtonText>
       </ButtonContainer>
     )
 }

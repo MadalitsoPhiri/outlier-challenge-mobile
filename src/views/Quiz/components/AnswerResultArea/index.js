@@ -1,6 +1,5 @@
 import React from "react";
-import {  View, Text } from "react-native";
-import styled,{css} from "styled-components";
+import styled,{css} from "styled-components/native";
 
 
 const Result = styled.Text`
@@ -44,7 +43,7 @@ export default ResultContainer = (props)=>{
     return (answered &&
         <Container>
            <Result>{isCorrect?"Correct!":"Sorry!"}</Result>
-            <Button {...props} disabled={isLastQuestion}>
+            <Button testID="Next.Button" {...props} disabled={isLastQuestion}>
                 <ButtonText>{isLastQuestion?"Finish":"Next Question"}</ButtonText>
             </Button>
             

@@ -8,6 +8,7 @@
 
 import React from 'react';
 import Quiz from './views/Quiz';
+import {getQuestions} from "./views/Quiz/data"
 
 
 
@@ -16,7 +17,7 @@ import Quiz from './views/Quiz';
 
 const App = () =>  {
  return (
-  <Quiz/>
+  <Quiz getQuestions={getQuestions}/>
   );
 };
 

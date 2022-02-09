@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { getQuestions, setQuizState } from '../Quiz/data/index';
+import styled from 'styled-components/native';
+import { setQuizState } from '../Quiz/data/index';
 import ButtonGrid from './components/ButtonGrid';
 import ProgressBar from './components/ProgressBar';
 import Difficulty from './components/Difficulty';
@@ -56,7 +56,7 @@ justify-content: space-between;
 padding: 10% 8%;
 `
 
-export default ()=>{
+export default ({getQuestions})=>{
    //TODO:Convert local state into global state with redux or context
    const [data, setData] = useState(setQuizState());
 
@@ -95,7 +95,7 @@ export default ()=>{
         <ProgressBar progress={`${getQuizProgress(data)}%`}/>
         <ContentContainer>
         <InnerContainer>
-           <QuestionTitle>{`Questions ${data.currentQuestionIndex + 1 } of ${data.questions.length}`}</QuestionTitle>
+           <QuestionTitle testID="Question.Label">{`Questions ${data.currentQuestionIndex + 1 } of ${data.questions.length}`}</QuestionTitle>
            <CategoryText>{data.questions[data.currentQuestionIndex].category}</CategoryText>
            <Difficulty value={data.questions[data.currentQuestionIndex].difficulty}/>
             <QuestionText>{data.questions[data.currentQuestionIndex].question}</QuestionText>

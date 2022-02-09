@@ -53,8 +53,8 @@ export default ({data})=>{
     return(
         <Container>
             <StatsLabelContainer>
-                <StatsLabelText>{`Score: ${getCurrentScore(data)}%`}</StatsLabelText>
-                <StatsLabelText>{`Max Score: ${getMaximumScore(data)}%`}</StatsLabelText>
+                <StatsLabelText testID="Score.Label">{`Score: ${getCurrentScore(data)}%`}</StatsLabelText>
+                <StatsLabelText testID="Max.Label">{`Max Score: ${getMaximumScore(data)}%`}</StatsLabelText>
             </StatsLabelContainer>
             <StatsContainer>
                 <CurrentScoreView data={getCurrentScore(data)}/>
