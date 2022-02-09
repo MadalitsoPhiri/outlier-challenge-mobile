@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
+import {ScrollView, Dimensions} from "react-native"
 import { setQuizState } from '../Quiz/data/index';
+import {View} from "react-native"
 import ButtonGrid from './components/ButtonGrid';
 import ProgressBar from './components/ProgressBar';
 import Difficulty from './components/Difficulty';
@@ -24,12 +26,14 @@ display: flex;
 flex-direction: column;
 background-color: white;
 
+
 `
 const QuestionTitle = styled.Text`
 font-size: 25px;
 color:black;
 font-weight: 500;
 margin-bottom: 5px;
+
 
 `
 const CategoryText = styled.Text`
@@ -47,18 +51,23 @@ margin-bottom: 12%;
 
 
 `
-const ContentContainer = styled.View`
+// const ContentContainer = styled.ScrollView`
+// flex:1;
+// height:100%;
+// display: flex;
+// flex-direction: column;
+// /* justify-content: space-between; */
+// padding: 10% 8%;
+// `
+const Spacer = styled.View`
 flex:1;
-height:100%;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding: 10% 8%;
 `
 
 export default ({getQuestions})=>{
    //TODO:Convert local state into global state with redux or context
    const [data, setData] = useState(setQuizState());
+   const screenHeight = Dimensions.get('window').height
+   
 
    const handleOnSelected = (answer)=>{
       const currentQuestions = data.questions
@@ -93,20 +102,27 @@ export default ({getQuestions})=>{
   return(
      <Container>
         <ProgressBar progress={`${getQuizProgress(data)}%`}/>
-        <ContentContainer>
-        <InnerContainer>
+        <ScrollView  contentContainerStyle={{justifyContent:"space-between",flexDirection:"column",height:"100%",display:"flex",paddingHorizontal:"8%",paddingVertical:"10%"}}>
+      
+           
            <QuestionTitle testID="Question.Label">{`Questions ${data.currentQuestionIndex + 1 } of ${data.questions.length}`}</QuestionTitle>
            <CategoryText>{data.questions[data.currentQuestionIndex].category}</CategoryText>
            <Difficulty value={data.questions[data.currentQuestionIndex].difficulty}/>
+           
+           
             <QuestionText>{data.questions[data.currentQuestionIndex].question}</QuestionText>
 
             <ButtonGrid data={data} onSelect={handleOnSelected} setter={setData}/> 
-
+         
             <AnswerResultArea data={data} onPress={handleOnNextQuestion}/>
-        </InnerContainer>
+            <Spacer/>
+            
+            <StatsBar data={data}/>
+
+      
        
-        <StatsBar data={data}/>
-        </ContentContainer>
+        </ScrollView>
+
       
      </Container>
     )

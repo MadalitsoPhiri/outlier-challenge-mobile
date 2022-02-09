@@ -25,6 +25,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 8%;
+flex:1;
 `
 const ButtonText = styled.Text`
 font-size: 15px;

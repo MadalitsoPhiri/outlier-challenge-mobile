@@ -13,6 +13,9 @@ position: relative;
 const Container = styled.View`
 width: 100%;
 
+
+
+
 `
 const StatsLabelContainer = styled.View`
 width: 100%;
