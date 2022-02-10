@@ -9,7 +9,7 @@ import {  Text } from 'react-native';
 
 const ButtonContainer = styled.Pressable`
   
-  ${props=>props.right?"margin-left:2%":"margin-right:8%"};
+  ${props=>props.isRight?"margin-left:2%;":"margin-right:8%;"};
   margin-bottom:8% ;
   padding: 5px 13px;
   border:${props=>props.disabled?"gray":"black"} 1px solid ;

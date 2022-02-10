@@ -29,14 +29,14 @@ export default ButtonGrid = ({data, onSelect})=>{
     return (
         <Container>
              <ButtonRow>
-            <QuizChoiceButton selected={choices[0] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[0])} text={choices[0]} right={false}/>
-            <QuizChoiceButton  selected={choices[1] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[1])} text={choices[1]} right={true}/>
+            <QuizChoiceButton selected={choices[0] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[0])} text={choices[0]} isRight={false}/>
+            <QuizChoiceButton  selected={choices[1] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[1])} text={choices[1]} isRight={true}/>
 
         </ButtonRow>
 
         {data.questions[data.currentQuestionIndex].type === "multiple" && <ButtonRow>
-            <QuizChoiceButton  selected={choices[2] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[2])}text={choices[2]} right={false}/>
-            <QuizChoiceButton selected={choices[3] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[3])} text={choices[3]} right={true}/>
+            <QuizChoiceButton  selected={choices[2] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[2])}text={choices[2]} isRight={false}/>
+            <QuizChoiceButton selected={choices[3] === question.answer} disabled={question.answered} onPress={()=>onSelect(choices[3])} text={choices[3]} isRight={true}/>
 
         </ButtonRow>}
         </Container>
